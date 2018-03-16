@@ -4,16 +4,15 @@
 var stream = require('readable-stream');
 var assert = require('assert');
 var fs = require('fs');
+var util = require('util');
 
 // node-pre-gyp magic
-var nodePreGyp = require('node-pre-gyp');
-var path = require('path');
-var binding_path = nodePreGyp.find(path.resolve(path.join(__dirname,'./package.json')));
-var native = require(binding_path);
+var nodePreGyp = require('pre-gyp-find');
+var native = nodePreGyp('lzma_native');
 
 Object.assign(exports, native);
 
-exports.version = '2.0.2';
+exports.version = '3.0.5';
 
 var Stream = exports.Stream;
 
@@ -67,6 +66,7 @@ class JSLzmaStream extends stream.Transform {
           this.push(null);
           this.emit('error-cleanup', err);
           this.emit('error', err);
+          return;
         }
 
         if (totalIn !== null) {
@@ -138,6 +138,7 @@ class JSLzmaStream extends stream.Transform {
   }
 
   _transform(chunk, encoding, callback) {
+    if (!this.nativeStream) return;
     // Split the chunk at 'YZ'. This is used to have a clean boundary at the
     // end of each `.xz` file stream.
     var possibleEndIndex = bufferIndexOfYZ(chunk);
@@ -420,6 +421,11 @@ exports.decompress = function(string, opt, on_finish) {
   var stream = createStream('autoDecoder', opt);
   return singleStringCoding(stream, string, on_finish);
 };
+
+if (util.promisify) {
+  exports.compress[util.promisify.custom] = exports.compress;
+  exports.decompress[util.promisify.custom] = exports.decompress;
+}
 
 exports.isXZ = function(buf) {
   return buf && buf.length >= 6 &&

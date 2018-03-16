@@ -1,13 +1,51 @@
 # Changelog for lzma-native
 
+## 3.0.5, Feb 21 2018
+
+* [[`c03299db13`](https://github.com/addaleax/lzma-native/commit/c03299db13)] - **ci**: remove OS X from coverage (Anna Henningsen)
+* [[`5f640416e0`](https://github.com/addaleax/lzma-native/commit/5f640416e0)] - **lib**: fix issue with invalid input (Anna Henningsen)
+
+## 3.0.4, Nov 27 2017
+
+* [[`669ee5098b`](https://github.com/addaleax/lzma-native/commit/669ee5098b)] - **package**: replace unavailable host to node-pre-gyp.addaleax.net (JianyingLi) [#48](https://github.com/addaleax/lzma-native/pull/48)
+
+## 3.0.3, Nov 26 2017
+
+* [[`fcba77ebe0`](https://github.com/addaleax/lzma-native/commit/fcba77ebe0)] - **ci**: include Node 9 support (Anna Henningsen)
+
+## 3.0.2, Nov 07 2017
+
+* [[`82b97dd94f`](https://github.com/addaleax/lzma-native/commit/82b97dd94f)] - **package**: update dependencies (Anna Henningsen)
+
+## 3.0.1, Jul 04 2017
+
+* [[`9e2ee5129f`](https://github.com/addaleax/lzma-native/commit/9e2ee5129f)] - **ci**: fix CI on Windows (Anna Henningsen)
+* [[`8d75757031`](https://github.com/addaleax/lzma-native/commit/8d75757031)] - **lib**: fix race condition (Alexander Sagen) [#40](https://github.com/addaleax/lzma-native/pull/40)
+
+## 3.0.0, Jun 26 2017
+
+This is unlikely to break anybody’s code, but removing the build files after install might qualify as semver-major.
+
+* [[`d5a252e3de`](https://github.com/addaleax/lzma-native/commit/d5a252e3de)] - **build**: rimraf build/ after install (Anna Henningsen)
+* [[`fd2165e2ae`](https://github.com/addaleax/lzma-native/commit/fd2165e2ae)] - **ci**: add electron prebuilts again (Anna Henningsen)
+* [[`039ac523d0`](https://github.com/addaleax/lzma-native/commit/039ac523d0)] - **lib**: explicit util.promisify() compat (Anna Henningsen)
+
+## 2.0.4, Jun 25 2017
+
+* [[`0cc00000b3`](https://github.com/addaleax/lzma-native/commit/0cc00000b3)] - **ci**: fix macOS prebuild binaries (Anna Henningsen)
+
+## 2.0.3, Jun 21 2017
+
+* [[`621628abac`](https://github.com/addaleax/lzma-native/commit/621628abac)] - **ci**: add Node 8 to CI matrix (Anna Henningsen)
+
 ## 2.0.2, May 18 2017
 
 * [[`39bd6a2dc0`](https://github.com/addaleax/lzma-native/commit/39bd6a2dc0)] - **package**: pin nan to 2.5.1 (Anna Henningsen)
 
 ## 2.0.1, March 24 2017
 
-* [[`c0491a0a07`](https://github.com/addaleax/lzma-native/commit/c0491a0a07)] - refactored binding.gyp (Refael Ackermann) 
-* [[`70883635b7`](https://github.com/addaleax/lzma-native/commit/70883635b7)] - **ci**: skip artifact encryption setup for non-tag builds (Anna Henningsen) 
+* [[`c0491a0a07`](https://github.com/addaleax/lzma-native/commit/c0491a0a07)] - refactored binding.gyp (Refael Ackermann)
+* [[`70883635b7`](https://github.com/addaleax/lzma-native/commit/70883635b7)] - **ci**: skip artifact encryption setup for non-tag builds (Anna Henningsen)
 
 ## 2.0.0, March 19 2017
 
