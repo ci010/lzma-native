@@ -16,13 +16,12 @@
   "dependencies": {
     "node-pre-gyp": "^0.9.0",
     "nan": "2.5.1",
+    "node-pre-gyp": "^0.6.39",
     "readable-stream": "^2.0.5",
-    "rimraf": "^2.6.1",
-    "pre-gyp-find": "^0.6.0"
+    "rimraf": "^2.6.1"
   },
   "bundledDependencies": [
-    "node-pre-gyp",
-    "rimraf"
+    "node-pre-gyp", "rimraf"
   ],
   "keywords": [
     "lzma",

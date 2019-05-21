@@ -7,8 +7,10 @@ var fs = require('fs');
 var util = require('util');
 
 // node-pre-gyp magic
-var nodePreGyp = require('pre-gyp-find');
-var native = nodePreGyp('lzma_native');
+var nodePreGyp = require('node-pre-gyp');
+var path = require('path');
+var binding_path = nodePreGyp.find(path.resolve(path.join(__dirname,'./package.json')));
+var native = require(binding_path);
 
 Object.assign(exports, native);
 
